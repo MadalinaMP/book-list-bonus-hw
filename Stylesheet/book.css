@@ -1,9 +1,74 @@
-.flex-container {
-    display: flex;
+* {
+    font-family: 'Arial Nova';
+    margin: 0;
+    padding: 0;
 }
 
-div {
-    padding-right: 50px;
+.flex-container {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+
+    background-color: #414141;
+}
+
+#myBooks {
+    background-color:rgb(100, 100, 100);
+    box-shadow: 0 0 10px white;
+    padding: 50px;
+    color: white;
+    line-height: 35px;
+}
+
+#myBooks h1 {
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px rgb(0, 117, 255);
+    font-size: 30px;
+}
+
+#newBook {
+    margin-left: 30px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.863);
+    box-shadow: 0px 0px 15px 3px rgb(0, 117, 255);
+    text-align: center;
+}
+
+#newBook h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #414141;
+}
+
+input[type="text"]{
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgb(0, 117, 255);
+    border-radius: 3px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    color: rgb(0, 117, 255);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0px 0px 5px 0px rgb(0, 117, 255);
+}
+
+button:hover {
+    cursor: pointer;
+    color:  rgb(89, 167, 255);
+    background-color:  rgb(242, 248, 255);
+}
+
+label {
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    font-weight: bold;
 }
 
 li {
@@ -11,7 +76,7 @@ li {
 }
 
 form div {
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 #errors p {
