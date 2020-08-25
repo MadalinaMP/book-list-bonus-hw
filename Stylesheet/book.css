@@ -18,3 +18,11 @@ form div {
     margin: 5px 0;
     color: red;
 }
+
+.red-border {
+    border: 2px solid red;
+}
+
+.orange-border {
+    border: 2px solid orange;
+}

@@ -1,30 +1,27 @@
-// array which contains the initial books
-var books = [{
-        title: 'The Design of EveryDay Things',
-        author: 'Don Norman',
-        alreadyRead: false
-    },
-    {
-        title: 'The Most Human Human',
-        author: 'Brian Christian',
-        alreadyRead: true
-    },
-    {
-        title: 'Moara cu noroc',
-        author: 'Ioan Slavici',
-        alreadyRead: true
-    }
-];
-
 // get the element with 'myBooks' id
 var myBooks = document.getElementById('myBooks');
-
 // create a list element
 var bookList = document.createElement('ul');
-
 // append the created element to the myBooks element
 myBooks.appendChild(bookList);
 
+// array which contains the initial books
+var books = [{
+    title: 'The Design of EveryDay Things',
+    author: 'Don Norman',
+    alreadyRead: false
+},
+{
+    title: 'The Most Human Human',
+    author: 'Brian Christian',
+    alreadyRead: true
+},
+{
+    title: 'Moara cu noroc',
+    author: 'Ioan Slavici',
+    alreadyRead: true
+}
+];
 // call the displayBook() function for every book in the books array
 for (var i = 0; i < books.length; i++) {
     displayBook(books[i]);
@@ -32,13 +29,12 @@ for (var i = 0; i < books.length; i++) {
 
 // get the buttom with the 'addNewBook' id
 var button = document.getElementById('addNewBook');
-
 // add a click event listener to this button
 button.addEventListener('click', function () {
 
     // get the values from the title and author inputs
-    var bookTitle = document.getElementsByName('title')[0].value;
-    var bookAuthor = document.getElementsByName('author')[0].value;
+    const bookTitle = document.querySelector('#title').value;
+    const bookAuthor = document.querySelector('#author').value;
 
     // create an new book object with the values that we get from the inputs
     var newBook = {
@@ -46,9 +42,16 @@ button.addEventListener('click', function () {
         author: bookAuthor,
         alreadyRead: false
     };
-
     // call the displayBook() function with the newBook object as argument
-    displayBook(newBook);
+
+    function checkFields() {
+        if (!bookTitle || !bookAuthor) {
+            alert("empty fields");
+        } else {
+            displayBook(newBook);
+        }
+    }
+    checkFields();
 
 });
 
