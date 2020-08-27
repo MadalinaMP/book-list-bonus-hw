@@ -18,11 +18,14 @@
             <form>
                 <div>
                     <label for="title">Title</label><br>
-                    <input required type="text" name="title" id="title" placeholder="Add title"><br>
+                    <input required type="text" class="allFields" name="title" id="title" placeholder="Add title"><br>
+                    <p class="errors">Please input the title.</p><br>
                 </div>
                 <div>
                     <label for="author">Author</label><br>
-                    <input required type="text" name="author" id="author" placeholder="Add author"><br>
+                    <input required type="text" name="author" class="allFields" id="author"
+                        placeholder="Add author"><br>
+                    <p class="errors">Please input the author.</p><br>
                 </div>
                 <div>
                     <button id="addNewBook" type="button">Add book</button>

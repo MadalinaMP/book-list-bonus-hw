@@ -44,14 +44,55 @@ button.addEventListener('click', function () {
     };
     // call the displayBook() function with the newBook object as argument
 
+    var errors;
+    var fields;
+    function getErrors() {
+        errors = document.getElementsByClassName("errors");
+    }
+
+    function getFields() {
+        fields = document.getElementsByClassName("allFields");
+    }
+
+    function displayErrors() {
+        for (var i = 0; i < errors.length; i++) {
+            errors[i].style.display = "block";
+        }
+    }
+
+    function removeErrors() {
+        for (var i = 0; i < fields.length; i++) {
+            fields[i].addEventListener('input', function () {
+                getErrors();
+
+                for (var i = 0; i < errors.length; i++) {
+                    errors[i].style.display = "none";
+                }
+            })
+        }
+    }
+
+    function emptyFields() {
+        for (var i = 0; i < fields.length; i++) {
+            fields[i].value = null;
+        }
+    }
+
     function checkFields() {
-        if (!bookTitle || !bookAuthor) {
-            alert("empty fields");
+        getErrors();
+        getFields();
+
+        if (!fields[0].value || !fields[1].value) {
+            displayErrors();
+            removeErrors();
+        } else if (bookTitle == books.title && bookAuthor == books.author) {
+            alert("ba");
         } else {
             displayBook(newBook);
         }
     }
     checkFields();
+    emptyFields();
 
 });
 

@@ -79,15 +79,11 @@ form div {
     padding: 20px 0;
 }
 
-#errors p {
-    margin: 5px 0;
+.errors {
+    margin-top: 5px;
+    font-size: 12px;
     color: red;
-}
-
-.red-border {
-    border: 2px solid red;
-}
-
-.orange-border {
-    border: 2px solid orange;
+    text-align: left;
+    font-style: italic;
+    display: none;
 }
